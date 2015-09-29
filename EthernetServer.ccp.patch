@@ -1,0 +1,15 @@
+--- libraries/Ethernet/src/EthernetServer.cpp.orig	2015-05-06 10:50:29.000000000 -0500
++++ libraries/Ethernet/src/EthernetServer.cpp	2015-09-29 13:00:30.436116513 -0500
+@@ -57,10 +57,10 @@
+     if (EthernetClass::_server_port[sock] == _port &&
+         (client.status() == SnSR::ESTABLISHED ||
+          client.status() == SnSR::CLOSE_WAIT)) {
+-      if (client.available()) {
++      // if (client.available()) {
+         // XXX: don't always pick the lowest numbered socket.
+         return client;
+-      }
++      // }
+     }
+   }
+ 
